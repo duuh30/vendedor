@@ -1,25 +1,21 @@
 # Tabela Frutas
 | CAMPOS        |     TIPO      |TAMANHO|NOT NULL|AUTO_INCREMENT  | Primary Key 
 | ------------- |:-------------:| -----:|--------:|------:        |  -------------:
-| Código        | INT           | 10    |SIM      |SIM            |SIM
-| Nome          | VARCHAR       | 50    |SIM      |               |NÃO
-| Quantidade    | INT           | 10    |NÃO      |               |NÃO
-| Preço         | DOUBLE        | 10    |NÃO      |               |NÃO
-| id_tipo       | INT           | 10    |NÃO      |               |NÃO
-| ID_Qtd         | INT           | 10    | NÃO    |               |NAO
+| Código_Fruta  | INT           | 10    |SIM      |SIM            |SIM
+| Nome_Fruta    | VARCHAR       | 50    |SIM      |               |NÃO
+| Preço_Fruta   | DOUBLE        | 10    |NÃO      |               |NÃO
+|Quantidade_Fruta|INT          | 10    |SIM      |               |NÃO
+| ID_TIPO       | INT           | 10    |NÃO      |               |NÃO
 
 
 # Tabela Tipo
 
 | CAMPOS       |    TIPO        | TAMANHO  | NOT NULL |    AUTO_INCREMENT    | PRIMARY KEY
 | ------------- |:-------------:| -----:|--------:|------:        |  -------------:
-| ID            | INT           | 10    | SIM     |      SIM      |   SIM     |    
-| Nome          | VARCHAR       | 50    |NAO      |NÃO            | NÃO        |
+| ID            | INT           | 10    | SIM     |      SIM      |SIM          |    
+| Nome          | VARCHAR       | 50    |NAO      |NÃO            |NÃO          |
+| UnidadeMedida | VARCHAR       | 2     |SIM      | NÃO           |NÃO          |
+| Peso          | DOUBLE        | 10    |SIM      |NÃO            |NÃO          |
 
 
-# Tabela Quantidade
-| CAMPOS        |     TIPO      |TAMANHO|NOT NULL|AUTO_INCREMENT  | Primary Key 
-| ------------- |:-------------:| -----:|--------:|--------------:|  -------------:
-| ID            | INT           | 10    | SIM     | SIM           | SIM         |
-|UnidadeMedida  | VARCHAR       | 50    | NÃO     | NÃO|          | Não         |
-| qtd           | INT           | 10    | SIM     | NÃO           | SIM
+
