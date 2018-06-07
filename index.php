@@ -1,3 +1,10 @@
+<?php
+$conn = new PDO('mysql:host=localhost;port=3306;dbname=mercado', 'root','');
+$pesquisa_tipo = $conn->query("SELECT nome_tipo FROM tipo_fruta");
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,10 +20,17 @@
 
 	<form action="cadfruta.php" method="POST">
 			<h4>Cadastro de Frutas</h4>
-			Nome da Fruta <input type="text" name="nomeFruta">
+			Nome da Fruta <input type="text" name="nomeFruta" required="required">
 			<p>Quantidade em Estoque <input type="text" name="quantidadeFruta"></p>
 			<p> Preço <input type="text" name="precoFruta">
-			<p> Tipo da Fruta <input type="text" name="tipoFruta">
+			<p> Tipo da Fruta <select name="tipoFruta" required="required">
+				<option>Selecione o tipo da fruta</option>
+				<?php //foreach para percorrer o retorno sql para mostrar o nome_tipo das frutas e jogar no select
+					foreach($pesquisa_tipo as $row){ // fecha a primeira tag php?> 
+					<option> <?php echo $row['nome_tipo']; ?></option>
+					<?php } ?>
+				?>
+			</select> 
 			<p> <input type="submit" name="enviar" value="Cadastrar Fruta">
 	</form>
 	<form action="cadtipo.php" method="POST">
@@ -34,3 +48,10 @@
 		
 </body>
 </html>
+
+
+<?php
+
+$conn = new PDO('mysql:host=localhost;dbname=mercado', 'root','');
+
+?>
