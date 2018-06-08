@@ -6,7 +6,7 @@
 | Preço_Fruta   | DOUBLE        | 10    |NÃO      |   NÃO         |NÃO
 |Quantidade_Fruta|INT           |10    |SIM       | NÃO           |NÃO
 | Nome_Tipo       | INT         | 10    |SIM      |  NÃO          |NÃO
-| Unidademedida  | VARCHAR      | 55    |SIM      |NÃO            |NÃO
+| Unidade_Medida  | VARCHAR      | 55    |SIM      |NÃO            |NÃO
 
 
 # Tabela Tipo
