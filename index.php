@@ -57,20 +57,3 @@ $pesquisa_unidade = $conn->query("SELECT nome_unidade FROM unimedida");
 	</form>	
 </body>
 </html>
-
-
-
-
-<?php
-if (isset($_POST['enviarFruta'])) { /*verificamos se o botao enviar foi clicado */
-
-if (!empty($_POST['nomeFruta'])) {
-echo "Digite o nome do Produto !";
-return true;
-} else {
-echo 'O campo nome precisa ser preenchido';
-return false;
-}
-
-}
-?>
