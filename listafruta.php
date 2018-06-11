@@ -18,6 +18,7 @@
 			<td>Preço</td>
 			<td>Peso</td>
 			<td>Medida</td>
+			<td>Ação </td>
 		</tr>
 		<tr>
 			<?php // // abre o TD e abre o php, porque? php pode ser inserido dentro do html, então como temos que retornar o valor que foi preenchido no foreach em cima, devemos abrir o php e printar na tela o valor, onde o comando "echo" só é reconhecido dentro da linguagem php, nas tags de abertura do mesmo ?>
@@ -28,6 +29,8 @@
 			<td> <?php echo $row['preco'];?></td>
 			<td> <?php echo $row['peso'];?> </td>
 			<td> <?php echo $row['medida'];?> </td>
+			<td> 	<button>Editar</button> 
+					<button>Excluir</button> </td>
 		</tr>
 
     <?php } // final do foreach . Porque fechar chaves aqui? para o php identificar que o final do seu código é ate aqui, onde ele percorre toda linha ate chegar na tabela e imprimir os dados, como é um foreach ele repete esse loop ate "x" quantidade de linhas retornada no parametro sql 
