@@ -24,21 +24,30 @@ $pesquisa_unidade = $conn->query("SELECT nome_unidade FROM unimedida");
 			Nome da Fruta <input type="text" name="nomeFruta">
 			<p>Quantidade em Estoque <input type="text" name="quantidadeFruta"></p>
 			<p> Preço <input type="text" name="precoFruta">
-			<p> Tipo da Fruta <select name="tipoFruta" required="required">
-				<option> Selecione... </option>
+			<p> Tipo da Fruta <select name="tipoFruta">
+				<option></option>
 				<?php //foreach para percorrer o retorno sql para mostrar o nome_tipo das frutas e jogar no select
 					foreach($pesquisa_tipo as $row){ // fecha a primeira tag php?> 
 					<option> <?php echo $row['nome_tipo']; ?></option>
 					<?php } ?>
 				?>
 			</select> 
+			<p> Peso <select name="peso">
+				<option></option>
+				<?php
+					$i=0;
+					while($i<=10){
+						echo "<option>$i</option>";
+						$i++;
+								}
+				?>
+			</select>
 			<p> Unidade de Medida <select name="unidade">
-				<option> Selecione... </option>
+				<option></option>
 				<?php
 				foreach($pesquisa_unidade as $row){ ?>
 					<option> <?php echo $row['nome_unidade']; ?> </option>
 				<?php } ?>
-				
 			</select>
 			<p> <input type="submit" name="enviarFruta" value="Cadastrar Fruta">
 	</form>

@@ -3,7 +3,7 @@
 			$conn = new PDO('mysql:host=localhost;dbname=mercado', 'root','');
 		echo "<p>Frutas Listadas !</p>";
 		// Parametro SQL para listar as frutas pelas colunas TIPO e NOME em ordem
-			$pesquisa = $conn->query("SELECT id_fruta,tipoFruta, nome, quantidade, preco, medida FROM frutas ORDER BY id_fruta, tipoFruta, nome, quantidade, preco, medida");
+			$pesquisa = $conn->query("SELECT id_fruta,tipoFruta, nome, quantidade, preco, medida, peso FROM frutas ORDER BY id_fruta, tipoFruta, nome, quantidade, preco, medida, peso");
 				// foreach corre cada registro do banco
 				foreach ($pesquisa as $row) { 
 
@@ -13,10 +13,11 @@
 		<tr>
 			<td>Código</td>
 			<td>Tipo</td>
-			<td> Nome</td>
+			<td>Nome</td>
 			<td>Quantidade</td>
 			<td>Preço</td>
-			<td> Medida </td>
+			<td>Peso</td>
+			<td>Medida</td>
 		</tr>
 		<tr>
 			<?php // // abre o TD e abre o php, porque? php pode ser inserido dentro do html, então como temos que retornar o valor que foi preenchido no foreach em cima, devemos abrir o php e printar na tela o valor, onde o comando "echo" só é reconhecido dentro da linguagem php, nas tags de abertura do mesmo ?>
@@ -25,6 +26,7 @@
 			<td> <?php echo $row['nome'];?></td>
 			<td> <?php echo $row['quantidade'];?></td>
 			<td> <?php echo $row['preco'];?></td>
+			<td> <?php echo $row['peso'];?> </td>
 			<td> <?php echo $row['medida'];?> </td>
 		</tr>
 
