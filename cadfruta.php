@@ -6,11 +6,9 @@
 			$quantidadeFruta = $_POST['quantidadeFruta'];
 			$precoFruta = $_POST['precoFruta'];
 			$tipoFruta = $_POST['tipoFruta'];
-			$medida = $_POST['unidade'];
-			$peso = $_POST['peso'];
-			if (!empty($nomeFruta && $quantidadeFruta && $precoFruta && $tipoFruta && $medida && $peso)){
+			if (!empty($nomeFruta && $quantidadeFruta && $precoFruta && $tipoFruta)){
 				echo 'Cadastro Realizado com sucesso !';
-				$conn->exec("INSERT INTO frutas (nome, quantidade, preco, tipoFruta, medida, peso) VALUES ('$nomeFruta', $quantidadeFruta, $precoFruta, '$tipoFruta', '$medida', $peso)");
+				$conn->exec("INSERT INTO frutas (nome, quantidade, preco, id_tipo_fruta) VALUES ('$nomeFruta', $quantidadeFruta, $precoFruta, '$tipoFruta')");
 			} else {
 				echo 'Todos os campos são obrigatórios !';
 			}

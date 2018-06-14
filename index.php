@@ -1,7 +1,7 @@
 <?php
 $conn = new PDO('mysql:host=localhost;port=3306;dbname=mercado', 'root','');
-$pesquisa_tipo = $conn->query("SELECT nome_tipo FROM tipo_fruta");
-$pesquisa_unidade = $conn->query("SELECT nome_unidade FROM unimedida");
+$pesquisa_tipo = $conn->query("SELECT id FROM tipo_fruta");
+$pesquisa_unidade = $conn->query("SELECT id FROM unimedida");
 
 ?>
 
@@ -28,40 +28,31 @@ $pesquisa_unidade = $conn->query("SELECT nome_unidade FROM unimedida");
 				<option></option>
 				<?php //foreach para percorrer o retorno sql para mostrar o nome_tipo das frutas e jogar no select
 					foreach($pesquisa_tipo as $row){ // fecha a primeira tag php?> 
-					<option> <?php echo $row['nome_tipo']; ?></option>
+					<option> <?php echo $row['id']; ?></option>
 					<?php } ?>
 				?>
 			</select> 
-			<p> Peso <select name="peso">
-				<option></option>
-				<?php
-					$i=0;
-					while($i<=10){
-						echo "<option>$i</option>";
-						$i++;
-								}
-				?>
-			</select>
-			<p> Unidade de Medida <select name="unidade">
-				<option></option>
-				<?php
-				foreach($pesquisa_unidade as $row){ ?>
-					<option> <?php echo $row['nome_unidade']; ?> </option>
-				<?php } ?>
-			</select>
 			<p> <input type="submit" name="enviarFruta" value="Cadastrar Fruta">
 	</form>
 	<form action="cadtipo.php" method="POST">
 			<h4>Cadastro de Tipos de Frutas</h4>
-			Nome do Tipo <input type="text" name="nomeTipo">
+			Descrição <input type="text" name="descricao">
+			Unidade de medida <select name="unidadeMedida">
+				<option>    </option>
+				<?php 
+				foreach($pesquisa_unidade as $row){  ?>
+					<option> <?php echo $row['id']; ?> </option>
+					<?php  } ?>
+				?>
+			</select>
+
 			<p> <input type="submit" name="enviarTipo" value="Cadastrar Tipo">
 
 	</form>
 	<form action="cadmedida.php" method="POST">
 		<h4>Cadastro de Unidade de Medidas</h4>
-		<p>Grandeza <input type="text" name="grandeza"> </p>
-		<p>Nome da Unidade <input type="text" name="nome_unidade"></p>
-		<p>Símbolo da Medida <input type="text" name="simbolo"> </p>
+		<p>Sigla <input type="text" name="sigla"> </p>
+		<p>Descricão <input type="text" name="descricao"></p>
 		<p> <input type="submit" name="enviarMedida" value="Cadastrar Unidade de Medida">
 	</form>	
 </body>
