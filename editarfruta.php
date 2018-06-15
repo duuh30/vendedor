@@ -18,7 +18,7 @@
 <body>
 	<h2>Editar Frutas</h2>
 	<form action="editardadosfrutas.php" method="POST">
-	Código da Fruta <input type="text" name="id"  value= <?php echo $row['id_fruta']; ?>>
+	<input type="hidden" name="id"  value= <?php echo $row['id_fruta']; ?>>
 	<p>Nome da Fruta <input type="text" name="nomeFruta" value=<?php echo $row['nome']; ?>></p>
 	<p>Quantidade em Estoque <input type="text" name="quantidadeFruta" value= <?php echo $row['quantidade']; ?> ></p>
 	<p>Preço <input type="text" name="preco" value=<?php echo $row['preco'];?> ></p>
