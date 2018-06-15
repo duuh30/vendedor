@@ -25,8 +25,8 @@
 			<td> <?php echo $row['nome'];?></td>
 			<td> <?php echo $row['quantidade'];?></td>
 			<td> <?php echo $row['preco'];?></td>
-			<td> <button>Editar</button> 
-				<button>Excluir</button> </td>
+			<td> <?php echo "<button> <a href='editarfruta.php?id=".$row['id_fruta']."'> Editar </a> </button>" ?>
+			 <?php echo "<button> <a href='deletarfruta.php?id=".$row['id_fruta']."'>Excluir </a> </button>" ?> </td>
 		</tr>
 
     <?php } // final do foreach . Porque fechar chaves aqui? para o php identificar que o final do seu código é ate aqui, onde ele percorre toda linha ate chegar na tabela e imprimir os dados, como é um foreach ele repete esse loop ate "x" quantidade de linhas retornada no parametro sql 
